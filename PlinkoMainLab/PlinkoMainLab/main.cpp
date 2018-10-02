@@ -26,8 +26,11 @@ int main() {
 	cout << "2 - Drop multiple chips into one slot" << endl;
 	cout << "3 - Show the options menu" << endl;
 	cout << "4 - Quit the program" << endl;
-	
-	
+
+	if (menuInput == 1)
+	{
+
+	}
 
 	system("pause");
 	return 0;
