@@ -23,6 +23,7 @@ int main() {
 	double position9;
 	double position10;
 	double position11;
+	double position12;
 	double ballPosition = 0.0;
 	double winnings = 0.0;
 	double totalWinnings = 0.0;
@@ -73,41 +74,42 @@ int main() {
 					}
 				}
 
+				position0 = slotChoice;
 				if (i == 0) {
-					position0 = ballPosition;
-				}
-				else if (i == 1) {
 					position1 = ballPosition;
 				}
-				else if (i == 2) {
+				else if (i == 1) {
 					position2 = ballPosition;
 				}
-				else if (i == 3) {
+				else if (i == 2) {
 					position3 = ballPosition;
 				}
-				else if (i == 4) {
+				else if (i == 3) {
 					position4 = ballPosition;
 				}
-				else if (i == 5) {
+				else if (i == 4) {
 					position5 = ballPosition;
 				}
-				else if (i == 6) {
+				else if (i == 5) {
 					position6 = ballPosition;
 				}
-				else if (i == 7) {
+				else if (i == 6) {
 					position7 = ballPosition;
 				}
-				else if (i == 8) {
+				else if (i == 7) {
 					position8 = ballPosition;
 				}
-				else if (i == 9) {
+				else if (i == 8) {
 					position9 = ballPosition;
 				}
-				else if (i == 10) {
+				else if (i == 9) {
 					position10 = ballPosition;
 				}
-				else if (i == 11) {
+				else if (i == 10) {
 					position11 = ballPosition;
+				}
+				else if (i == 11) {
+					position12 = ballPosition;
 				}
 			}
 
@@ -130,7 +132,7 @@ int main() {
 			cout << "*** Dropping chip into slot " << slotChoice << " ***" << endl;
 			cout << fixed << setprecision(1) << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", "
 				<< position3 << ", " << position4 << ", " << position5 << ", " << position6 << ", " << position7 << ", "
-				<< position8 << ", " << position9 << ", " << position10 << ", " << position11 << "]" << endl;
+				<< position8 << ", " << position9 << ", " << position10 << ", " << position11 << "," << position12 << "]" << endl;
 			cout << setprecision(2) << "Winnings: $" << winnings;
 		}
 		// Menu input of 2
