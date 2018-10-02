@@ -29,6 +29,8 @@ int main() {
 	double totalWinnings = 0.0;
 	double avgWinnings = 0.0;
 
+	srand(RANDOM_SEED);
+
 	cout << "Welcome to the Plinko simulator!  Enter 3 to see options.";
 
 	do {
