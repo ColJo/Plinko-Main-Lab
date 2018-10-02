@@ -178,22 +178,22 @@ int main() {
 							ballPosition += 0.5;
 						}
 					}
+				}
 
-					if (ballPosition == 0 || ballPosition == 8) {
-						winnings = 100.00;
-					}
-					else if (ballPosition == 1 || ballPosition == 7) {
-						winnings = 500.00;
-					}
-					else if (ballPosition == 2 || ballPosition == 6) {
-						winnings = 1000.00;
-					}
-					else if (ballPosition == 3 || ballPosition == 5) {
-						winnings = 0.00;
-					}
-					else if (ballPosition == 4) {
-						winnings = 10000.00;
-					}
+				if (ballPosition == 0 || ballPosition == 8) {
+					winnings = 100.00;
+				}
+				else if (ballPosition == 1 || ballPosition == 7) {
+					winnings = 500.00;
+				}
+				else if (ballPosition == 2 || ballPosition == 6) {
+					winnings = 1000.00;
+				}
+				else if (ballPosition == 3 || ballPosition == 5) {
+					winnings = 0.00;
+				}
+				else if (ballPosition == 4) {
+					winnings = 10000.00;
 				}
 
 				totalWinnings += winnings;
