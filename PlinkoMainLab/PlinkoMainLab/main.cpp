@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -87,10 +88,52 @@ int main() {
 				}
 			}
 
-			
+			if (i = 0) {
+				position0 = ballPosition;
+			}
+			else if (i = 1) {
+				position1 = ballPosition;
+			}
+			else if (i = 2) {
+				position2 = ballPosition;
+			}
+			else if (i = 3) {
+				position3 = ballPosition;
+			}
+			else if (i = 4) {
+				position4 = ballPosition;
+			}
+			else if (i = 5) {
+				position5 = ballPosition;
+			}
+			else if (i = 6) {
+				position6 = ballPosition;
+			}
+			else if (i = 7) {
+				position7 = ballPosition;
+			}
+			else if (i = 8) {
+				position8 = ballPosition;
+			}
+			else if (i = 9) {
+				position9 = ballPosition;
+			}
+			else if (i = 10) {
+				position10 = ballPosition;
+			}
+			else if (i = 11) {
+				position11 = ballPosition;
+			}
 		}
+
+		setprecision(2);
+		cout << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", " << position3 << ", " << position4 
+			<< ", " << position5 << ", " << position6 << ", " << position7 << ", " << position8 << ", " << position9 
+			<< ", " << position10 << ", " << position11 << "]" << endl;
+		cout << "Winnings: $";
 	}
 
+	cout << ballPosition << endl;
 	system("pause");
 	return 0;
 }
