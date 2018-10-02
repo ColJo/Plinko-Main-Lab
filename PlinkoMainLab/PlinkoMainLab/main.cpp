@@ -9,7 +9,7 @@ int main() {
 	int slotChoice = 0;
 	int randNum = 0;
 	int numChips = 0;
-	
+
 	double position0;
 	double position1;
 	double position2;
@@ -24,8 +24,8 @@ int main() {
 	double position11;
 	double ballPosition = 0.0;
 	double winnings = 0.0;
-	
-	bool choiceIsBad = false;
+
+	bool slotChoiceIsBad = false;
 
 	cout << "Welcome to the Plinko simulator! ";
 	do {
@@ -34,7 +34,7 @@ int main() {
 		cout << "Enter your selection now: ";
 		cin >> userInput;
 		cout << endl;
-		if (userInput != 3){
+		if (userInput != 3) {
 			cout << "Invalid selection. ";
 		}
 	} while (userInput != 3);
@@ -46,34 +46,32 @@ int main() {
 	cout << "1 - Drop a single chip into one slot" << endl;
 	cout << "2 - Drop multiple chips into one slot" << endl;
 	cout << "3 - Show the options menu" << endl;
-	cout << "4 - Quit the program" << endl;
+	cout << "4 - Quit the program";
 
 	do {
-		cout << endl;
+		cout << endl << endl;
 		cout << "Enter your selection now: ";
 		cin >> menuInput;
 
 		// Menu input of 1
 		if (menuInput == 1) {
-			do {
-				cout << endl << endl;
-				cout << "*** Drop a single chip ***" << endl;
-				cout << endl;
-				cout << "Which slot do you want to drop the chip in (0-8)? ";
-				cin >> slotChoice;
-				cout << endl << endl;
+			cout << endl << endl;
+			cout << "*** Drop a single chip ***" << endl;
+			cout << endl;
+			cout << "Which slot do you want to drop the chip in (0-8)? ";
+			cin >> slotChoice;
+			cout << endl << endl;
 
-				choiceIsBad = false;
-				if (slotChoice < 0 || slotChoice > 8) {
-					cout << "Invalid slot.";
-					choiceIsBad = true;
-				}
-				else {
-					ballPosition = static_cast<double>(slotChoice);
-				}
-			} while (choiceIsBad);
+			slotChoiceIsBad = false;
+			if (slotChoice < 0 || slotChoice > 8) {
+				cout << "Invalid slot.";
+				continue;
+			}
+			else {
+				ballPosition = static_cast<double>(slotChoice);
+			}
 
-			for (int i = 0; i < 12; i = i + 1) {
+			for (int i = 0; i < 12; i++) {
 				randNum = rand() % 2;
 				if (randNum == 0) {
 					if (ballPosition == 0) {
@@ -154,23 +152,31 @@ int main() {
 
 		// Menu input of 2
 		if (menuInput == 2) {
-			do {
-				cout << endl << endl;
-				cout << "*** Drop multiple chips ***" << endl;
-				cout << endl;
-				cout << "Which slot do you want to drop the chip in (0-8)? ";
-				cin >> slotChoice;
-				cout << endl << endl;
+			cout << endl << endl;
+			cout << "*** Drop multiple chips ***" << endl;
+			cout << endl;
+			cout << "How many chips do you want to drop (>0)? ";
+			cin >> numChips;
+			cout << endl << endl;
 
-				choiceIsBad = false;
-				if (slotChoice < 0 || slotChoice > 8) {
-					cout << "Invalid slot.";
-					choiceIsBad = true;
-				}
-				else {
-					ballPosition = static_cast<double>(slotChoice);
-				}
-			} while (choiceIsBad);
+			if (numChips <= 0)
+			{
+				cout << "Invalid number of chips.";
+				continue;
+			}
+
+			cout << "Which slot do you want to drop the chip in (0-8)? ";
+			cin >> slotChoice;
+			cout << endl << endl;
+
+			slotChoiceIsBad = false;
+			if (slotChoice < 0 || slotChoice > 8) {
+				cout << "Invalid slot.";
+				slotChoiceIsBad = true;
+			}
+			else {
+				ballPosition = static_cast<double>(slotChoice);
+			}
 
 			for (int i = 0; i < 12; i = i + 1) {
 				randNum = rand() % 2;
