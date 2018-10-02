@@ -6,7 +6,6 @@ using namespace std;
 int main() {
 	const int RANDOM_SEED = 42;
 
-	int userInput = 0;
 	int menuInput = 0;
 	int slotChoice = 0;
 	int randNum = 0;
