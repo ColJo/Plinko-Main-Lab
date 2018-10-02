@@ -3,9 +3,24 @@
 using namespace std;
 
 int main() {
-	int userInput;
-	int menuInput;
-	int slotChoice;
+	int userInput = 0;
+	int menuInput = 0;
+	int slotChoice = 0;
+	int randNum = 0;
+	int position0;
+	int position1;
+	int position2;
+	int position3;
+	int position4;
+	int position5;
+	int position6;
+	int position7;
+	int position8;
+	int position9;
+	int position10;
+	int position11;
+
+	double ballPosition = 0.0;
 	
 	bool choiceIsBad = false;
 
@@ -34,24 +49,48 @@ int main() {
 	cout << "Enter your selection now: ";
 	cin >> menuInput;
 	
-	do {
-		cout << endl << endl;
-		cout << "*** Drop a single chip ***" << endl;
-		cout << endl;
-		cout << "Which slot do you want to drop the chip in (0-8)? ";
-		cin >> slotChoice;
-		cout << endl << endl;
+	if (menuInput == 1) {
+		do {
+			cout << endl << endl;
+			cout << "*** Drop a single chip ***" << endl;
+			cout << endl;
+			cout << "Which slot do you want to drop the chip in (0-8)? ";
+			cin >> slotChoice;
+			cout << endl << endl;
 
-		choiceIsBad = false;
-		if (slotChoice < 0 || slotChoice > 8)
-		{
-			cout << "Invalid slot.";
-			choiceIsBad = true;
+			choiceIsBad = false;
+			if (slotChoice < 0 || slotChoice > 8) {
+				cout << "Invalid slot.";
+				choiceIsBad = true;
+			}
+			else {
+				ballPosition = static_cast<double>(slotChoice);
+			}
+		} while (choiceIsBad);
+
+		for (int i = 0; i < 12; i++) {
+			randNum = rand() % 2;
+			if (randNum == 0) {
+				if (ballPosition == 0) {
+					ballPosition += 0.5;
+				}
+				else {
+					ballPosition -= 0.5;
+				}
+			}
+			else {
+				if (ballPosition == 8) {
+					ballPosition -= 0.5;
+				}
+				else {
+					ballPosition += 0.5;
+				}
+			}
+
+			
 		}
-	} while (choiceIsBad);
+	}
 
 	system("pause");
 	return 0;
-
-
 }
