@@ -150,7 +150,7 @@ int main() {
 
 			cout << "Which slot do you want to drop the chip in (0-8)? ";
 			cin >> slotChoice;
-			cout << endl << endl;
+			cout << endl;
 
 			if (slotChoice < 0 || slotChoice > 8) {
 				cout << "Invalid slot.";
