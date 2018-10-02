@@ -1,3 +1,9 @@
+/*
+Coleman Johnston, Section 7, colemantjohnston@gmail.com
+Blake Abel, Section 7, blakedeanabel@gmail.com
+We used proper paired programming.
+We developed this program exclusively in VS.
+*/
 #include <iostream>
 #include <iomanip>
 
