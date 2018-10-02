@@ -203,10 +203,10 @@ int main() {
 				totalWinnings += winnings;
 			}
 
-			cout << setprecision(2) << "Total winnings on " << numChips << " chips: $" << totalWinnings << endl;
+			cout << fixed << setprecision(2) << "Total winnings on " << numChips << " chips: $" << totalWinnings << endl;
 
 			avgWinnings = totalWinnings / numChips;
-			cout << "Average winnings per chip: $" << avgWinnings;
+			cout << fixed << setprecision(2) << "Average winnings per chip: $" << avgWinnings;
 		}
 		// Menu input of 3
 		else if (menuInput == 3) {
