@@ -5,6 +5,9 @@ using namespace std;
 int main() {
 	int userInput;
 	int menuInput;
+	int slotChoice;
+	
+	bool choiceIsBad = false;
 
 	cout << "Welcome to the Plinko simulator! ";
 	do {
@@ -27,10 +30,25 @@ int main() {
 	cout << "3 - Show the options menu" << endl;
 	cout << "4 - Quit the program" << endl;
 
-	if (menuInput == 1)
-	{
+	cout << endl;
+	cout << "Enter your selection now: ";
+	cin >> menuInput;
+	
+	do {
+		cout << endl << endl;
+		cout << "*** Drop a single chip ***" << endl;
+		cout << endl;
+		cout << "Which slot do you want to drop the chip in (0-8)? ";
+		cin >> slotChoice;
+		cout << endl << endl;
 
-	}
+		choiceIsBad = false;
+		if (slotChoice < 0 || slotChoice > 8)
+		{
+			cout << "Invalid slot.";
+			choiceIsBad = true;
+		}
+	} while (choiceIsBad);
 
 	system("pause");
 	return 0;
