@@ -24,8 +24,8 @@ int main() {
 	double position11;
 	double ballPosition = 0.0;
 	double winnings = 0.0;
-
-	bool slotChoiceIsBad = false;
+	double totalWinnings = 0.0;
+	double avgWinnings = 0.0;
 
 	cout << "Welcome to the Plinko simulator! ";
 	do {
@@ -62,7 +62,6 @@ int main() {
 			cin >> slotChoice;
 			cout << endl << endl;
 
-			slotChoiceIsBad = false;
 			if (slotChoice < 0 || slotChoice > 8) {
 				cout << "Invalid slot.";
 				continue;
@@ -71,82 +70,46 @@ int main() {
 				ballPosition = static_cast<double>(slotChoice);
 			}
 
-			for (int i = 0; i < 12; i++) {
-				randNum = rand() % 2;
-				if (randNum == 0) {
-					if (ballPosition == 0) {
-						ballPosition += 0.5;
+			for (int j = 0; j < numChips; j++) {
+				for (int i = 0; i < 12; i++) {
+					randNum = rand() % 2;
+					if (randNum == 0) {
+						if (ballPosition == 0) {
+							ballPosition += 0.5;
+						}
+						else {
+							ballPosition -= 0.5;
+						}
 					}
 					else {
-						ballPosition -= 0.5;
+						if (ballPosition == 8) {
+							ballPosition -= 0.5;
+						}
+						else {
+							ballPosition += 0.5;
+						}
 					}
-				}
-				else {
-					if (ballPosition == 8) {
-						ballPosition -= 0.5;
+
+					if (ballPosition == 0 || ballPosition == 8) {
+						winnings = 100.00;
 					}
-					else {
-						ballPosition += 0.5;
+					else if (ballPosition == 1 || ballPosition == 7) {
+						winnings = 500.00;
+					}
+					else if (ballPosition == 2 || ballPosition == 6) {
+						winnings = 1000.00;
+					}
+					else if (ballPosition == 3 || ballPosition == 5) {
+						winnings = 0.00;
+					}
+					else if (ballPosition == 4) {
+						winnings = 10000.00;
 					}
 				}
 
-				if (i == 0) {
-					position0 = ballPosition;
-				}
-				else if (i == 1) {
-					position1 = ballPosition;
-				}
-				else if (i == 2) {
-					position2 = ballPosition;
-				}
-				else if (i == 3) {
-					position3 = ballPosition;
-				}
-				else if (i == 4) {
-					position4 = ballPosition;
-				}
-				else if (i == 5) {
-					position5 = ballPosition;
-				}
-				else if (i == 6) {
-					position6 = ballPosition;
-				}
-				else if (i == 7) {
-					position7 = ballPosition;
-				}
-				else if (i == 8) {
-					position8 = ballPosition;
-				}
-				else if (i == 9) {
-					position9 = ballPosition;
-				}
-				else if (i == 10) {
-					position10 = ballPosition;
-				}
-				else if (i == 11) {
-					position11 = ballPosition;
-				}
+				totalWinnings += winnings;
 			}
 
-			if (ballPosition == 0 || ballPosition == 8) {
-				winnings = 100.00;
-			}
-			else if (ballPosition == 1 || ballPosition == 7) {
-				winnings = 500.00;
-			}
-			else if (ballPosition == 2 || ballPosition == 6) {
-				winnings = 1000.00;
-			}
-			else if (ballPosition == 3 || ballPosition == 5) {
-				winnings = 0.00;
-			}
-			else if (ballPosition == 4) {
-				winnings = 10000.00;
-			}
-
-			cout << fixed << setprecision(1) << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", "
-				<< position3 << ", " << position4 << ", " << position5 << ", " << position6 << ", " << position7 << ", "
-				<< position8 << ", " << position9 << ", " << position10 << ", " << position11 << "]" << endl;
 			cout << setprecision(2) << "Winnings: $" << winnings << endl;
 		}
 
@@ -169,10 +132,8 @@ int main() {
 			cin >> slotChoice;
 			cout << endl << endl;
 
-			slotChoiceIsBad = false;
 			if (slotChoice < 0 || slotChoice > 8) {
 				cout << "Invalid slot.";
-				slotChoiceIsBad = true;
 			}
 			else {
 				ballPosition = static_cast<double>(slotChoice);
