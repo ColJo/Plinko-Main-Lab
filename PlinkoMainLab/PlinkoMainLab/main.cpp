@@ -8,19 +8,19 @@ int main() {
 	int menuInput = 0;
 	int slotChoice = 0;
 	int randNum = 0;
-	int position0;
-	int position1;
-	int position2;
-	int position3;
-	int position4;
-	int position5;
-	int position6;
-	int position7;
-	int position8;
-	int position9;
-	int position10;
-	int position11;
-
+	
+	double position0;
+	double position1;
+	double position2;
+	double position3;
+	double position4;
+	double position5;
+	double position6;
+	double position7;
+	double position8;
+	double position9;
+	double position10;
+	double position11;
 	double ballPosition = 0.0;
 	
 	bool choiceIsBad = false;
@@ -69,7 +69,7 @@ int main() {
 			}
 		} while (choiceIsBad);
 
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 12; i = i + 1) {
 			randNum = rand() % 2;
 			if (randNum == 0) {
 				if (ballPosition == 0) {
@@ -88,52 +88,50 @@ int main() {
 				}
 			}
 
-			if (i = 0) {
+			if (i == 0) {
 				position0 = ballPosition;
 			}
-			else if (i = 1) {
+			else if (i == 1) {
 				position1 = ballPosition;
 			}
-			else if (i = 2) {
+			else if (i == 2) {
 				position2 = ballPosition;
 			}
-			else if (i = 3) {
+			else if (i == 3) {
 				position3 = ballPosition;
 			}
-			else if (i = 4) {
+			else if (i == 4) {
 				position4 = ballPosition;
 			}
-			else if (i = 5) {
+			else if (i == 5) {
 				position5 = ballPosition;
 			}
-			else if (i = 6) {
+			else if (i == 6) {
 				position6 = ballPosition;
 			}
-			else if (i = 7) {
+			else if (i == 7) {
 				position7 = ballPosition;
 			}
-			else if (i = 8) {
+			else if (i == 8) {
 				position8 = ballPosition;
 			}
-			else if (i = 9) {
+			else if (i == 9) {
 				position9 = ballPosition;
 			}
-			else if (i = 10) {
+			else if (i == 10) {
 				position10 = ballPosition;
 			}
-			else if (i = 11) {
+			else if (i == 11) {
 				position11 = ballPosition;
 			}
 		}
 
-		setprecision(2);
-		cout << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", " << position3 << ", " << position4 
+		cout << setprecision(2) << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", " << position3 << ", " << position4 
 			<< ", " << position5 << ", " << position6 << ", " << position7 << ", " << position8 << ", " << position9 
 			<< ", " << position10 << ", " << position11 << "]" << endl;
-		cout << "Winnings: $";
+		cout << "Winnings: $" << endl;
 	}
 
-	cout << ballPosition << endl;
 	system("pause");
 	return 0;
 }
