@@ -3,13 +3,12 @@
 using namespace std;
 
 int main() {
-	cout << "Hello" << endl;
-	cout << " World" << endl;
-	cout << " blake" << endl;
+	cout << "Welcome to the Plinko simulator! Enter 3 to see options." << endl;
+	cout << endl;
 
-	cout << "coleman";
+	cout << "Enter your selection now: ";
 
-	system("pause")
+	system("pause");
 	return 0;
 
 
