@@ -156,6 +156,7 @@ int main() {
 
 			if (slotChoice < 0 || slotChoice > 8) {
 				cout << "Invalid slot.";
+				continue;
 			}
 			else {
 				ballPosition = static_cast<double>(slotChoice);
