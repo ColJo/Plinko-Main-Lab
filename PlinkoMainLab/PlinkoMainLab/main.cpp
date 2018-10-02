@@ -127,7 +127,7 @@ int main() {
 				winnings = 10000.00;
 			}
 
-			cout << "*** Dropping chip into slot " << slotChoice << " ***";
+			cout << "*** Dropping chip into slot " << slotChoice << " ***" << endl;
 			cout << fixed << setprecision(1) << "Path: [" << position0 << ", " << position1 << ", " << position2 << ", "
 				<< position3 << ", " << position4 << ", " << position5 << ", " << position6 << ", " << position7 << ", "
 				<< position8 << ", " << position9 << ", " << position10 << ", " << position11 << "]" << endl;
