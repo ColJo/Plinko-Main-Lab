@@ -56,17 +56,15 @@ int main() {
 			}
 
 			for (int i = 0; i < 12; i++) {
-				randNum = rand() % 2;
-				if (randNum == 0) {
-					if (ballPosition == 0) {
-						ballPosition += 0.5;
-					}
-					else {
-						ballPosition -= 0.5;
-					}
+				if (ballPosition == 0) {
+					ballPosition += 0.5;
+				}
+				else if (ballPosition == 8) {
+					ballPosition -= 0.5;
 				}
 				else {
-					if (ballPosition == 8) {
+					randNum = rand() % 2;
+					if (randNum == 0) {
 						ballPosition -= 0.5;
 					}
 					else {
@@ -165,17 +163,15 @@ int main() {
 			totalWinnings = 0.0;
 			for (int j = 0; j < numChips; j++) {
 				for (int i = 0; i < 12; i = i + 1) {
-					randNum = rand() % 2;
-					if (randNum == 0) {
-						if (ballPosition == 0) {
-							ballPosition += 0.5;
-						}
-						else {
-							ballPosition -= 0.5;
-						}
+					if (ballPosition == 0) {
+						ballPosition += 0.5;
+					}
+					else if (ballPosition == 8) {
+						ballPosition -= 0.5;
 					}
 					else {
-						if (ballPosition == 8) {
+						randNum = rand() % 2;
+						if (randNum == 0) {
 							ballPosition -= 0.5;
 						}
 						else {
