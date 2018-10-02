@@ -162,6 +162,7 @@ int main() {
 
 			totalWinnings = 0.0;
 			for (int j = 0; j < numChips; j++) {
+				ballPosition = static_cast<double>(slotChoice);
 				for (int i = 0; i < 12; i = i + 1) {
 					if (ballPosition == 0) {
 						ballPosition += 0.5;
